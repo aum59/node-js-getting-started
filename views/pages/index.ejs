@@ -7,13 +7,26 @@
 <body>
 
   <% include ../partials/nav.ejs %>
-
+<script>
+    function changecolor(){
+    var i = parseInt((Math.random() * 11)+(Math.random() * 10)+1);
+    var color = ["#e8c5c5", "#ef0b0b", "#fcd876", "#f2b40c", 
+                 "#e5f794", "#c5ef07", "#98f989", "#24f204", 
+                 "#9be8da", "#8799ed", "#0932ef", "#d184ed", 
+                 "#b10bed", "#f210b2", "#f47f7f", "#f90000", 
+                 "#592b2b", "#2a594a", "#4c316d", "#8c2765"];
+            
+    console.log(i); 
+    document.getElementById("jslogo").style.backgroundColor = color[i];
+    }
+</script>
+    
 <div class="jumbotron text-center">
   <div class="container">
     <a href="/" class="lang-logo">
-      <img src="/lang-logo.png">
+      <img src="/lang-logo.png" id="jslogo" onload="changecolor()">
     </a>
-    <h1>Getting Started with Node on Aum59.HerokuApp</h1>
+    <h1>Aum59.HerokuApp</h1>
     <p>This is a sample Node application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
     <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started with Node</a>
     <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
